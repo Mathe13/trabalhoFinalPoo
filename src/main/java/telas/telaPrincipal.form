@@ -47,18 +47,14 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" attributes="0">
                           <Component id="adicionarItemBotao" min="-2" pref="118" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="removerItemBotao" min="-2" pref="118" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" attributes="0">
-                          <Component id="modificarItemBotao" min="-2" pref="118" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="mostrarItemBotao" min="-2" pref="118" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="mostrarItemBotao" min="-2" pref="248" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -80,7 +76,6 @@
                   </Group>
                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="modificarItemBotao" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="carregarItemBotao" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="mostrarItemBotao" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -108,18 +103,10 @@
         </Component>
         <Component class="javax.swing.JButton" name="mostrarItemBotao">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Mostrar item"/>
+            <Property name="text" type="java.lang.String" value="Mostrar/alterar item"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mostrarItemBotaoActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="modificarItemBotao">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Modificar item"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="modificarItemBotaoActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="salvarItemBotao">
@@ -134,6 +121,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Carregar itens de arquivo"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="carregarItemBotaoActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

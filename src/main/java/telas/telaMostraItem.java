@@ -30,8 +30,10 @@ public class telaMostraItem extends javax.swing.JFrame {
     public telaMostraItem(Estoque estoque1,String nome) {
         this.estoque = estoque1;
         String aux;
+        initComponents();
+
         this.item = (this.estoque.searchData("nome", nome)).get(0);
-        this.nomeItem.setText("poha");
+        this.nomeItem.setText(this.item.getNome());
         if("CM".equals(this.item.getUnidade_tamanho())){
             this.unidadeCm.setSelected(true);
             this.unidadeM.setSelected(false);
@@ -44,7 +46,6 @@ public class telaMostraItem extends javax.swing.JFrame {
         this.preco.setText(Float.toString(this.item.getPreco()));
 
         
-        initComponents();
     }
 
     /**

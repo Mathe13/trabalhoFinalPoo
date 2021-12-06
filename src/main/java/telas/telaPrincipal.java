@@ -38,7 +38,6 @@ public class telaPrincipal extends javax.swing.JFrame {
         adicionarItemBotao = new javax.swing.JButton();
         removerItemBotao = new javax.swing.JButton();
         mostrarItemBotao = new javax.swing.JButton();
-        modificarItemBotao = new javax.swing.JButton();
         salvarItemBotao = new javax.swing.JButton();
         carregarItemBotao = new javax.swing.JButton();
 
@@ -58,17 +57,10 @@ public class telaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        mostrarItemBotao.setText("Mostrar item");
+        mostrarItemBotao.setText("Mostrar/alterar item");
         mostrarItemBotao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mostrarItemBotaoActionPerformed(evt);
-            }
-        });
-
-        modificarItemBotao.setText("Modificar item");
-        modificarItemBotao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                modificarItemBotaoActionPerformed(evt);
             }
         });
 
@@ -80,22 +72,24 @@ public class telaPrincipal extends javax.swing.JFrame {
         });
 
         carregarItemBotao.setText("Carregar itens de arquivo");
+        carregarItemBotao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                carregarItemBotaoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(adicionarItemBotao, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(removerItemBotao, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(modificarItemBotao, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(mostrarItemBotao, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(mostrarItemBotao, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(carregarItemBotao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -112,7 +106,6 @@ public class telaPrincipal extends javax.swing.JFrame {
                     .addComponent(salvarItemBotao))
                 .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(modificarItemBotao)
                     .addComponent(carregarItemBotao)
                     .addComponent(mostrarItemBotao))
                 .addContainerGap(103, Short.MAX_VALUE))
@@ -161,23 +154,24 @@ public class telaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_mostrarItemBotaoActionPerformed
 
     private void removerItemBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removerItemBotaoActionPerformed
-       String procuraNome;
+        String procuraNome;
         this.dispose();
         procuraNome = JOptionPane.showInputDialog("Qual item você deseja remover? ");
+        this.estoque.deleteItem(procuraNome);
         new telaPrincipal(this.estoque).setVisible(true);
     }//GEN-LAST:event_removerItemBotaoActionPerformed
 
-    private void modificarItemBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarItemBotaoActionPerformed
-        String procuraNome;
-        this.dispose();
-        procuraNome = JOptionPane.showInputDialog("Qual item você deseja modificar? ");
-        new telaPrincipal(this.estoque).setVisible(true);
-    }//GEN-LAST:event_modificarItemBotaoActionPerformed
-
     private void salvarItemBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarItemBotaoActionPerformed
+        this.estoque.exportData();
         JOptionPane.showMessageDialog(null,"Arquivo salvo com sucesso", "Salvar itens em arquivo", JOptionPane.INFORMATION_MESSAGE);
         new telaPrincipal(this.estoque).setVisible(true);
     }//GEN-LAST:event_salvarItemBotaoActionPerformed
+
+    private void carregarItemBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carregarItemBotaoActionPerformed
+        this.estoque.exportData();
+        JOptionPane.showMessageDialog(null,"Arquivo carregado com sucesso", "carreagar itens", JOptionPane.INFORMATION_MESSAGE);
+        new telaPrincipal(this.estoque).setVisible(true);
+    }//GEN-LAST:event_carregarItemBotaoActionPerformed
 
 
 
@@ -185,7 +179,6 @@ public class telaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton adicionarItemBotao;
     private javax.swing.JButton carregarItemBotao;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JButton modificarItemBotao;
     private javax.swing.JButton mostrarItemBotao;
     private javax.swing.JButton removerItemBotao;
     private javax.swing.JButton salvarItemBotao;

@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public interface Estocavel {
     public void addItem(Item iten);
-    public void deleteItem(int id);
+    public void deleteItem(String nome);
     public Item getItem(int id);
     public void exportData();
     public void importData();

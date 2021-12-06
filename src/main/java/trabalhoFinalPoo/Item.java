@@ -34,7 +34,7 @@ public class Item {
      * @return the nome
      */
     public String getNome() {
-        return nome;
+        return this.nome;
     }
 
     /**
@@ -48,7 +48,7 @@ public class Item {
      * @return the unidade_tamanho
      */
     public String getUnidade_tamanho() {
-        return unidade_tamanho;
+        return this.unidade_tamanho;
     }
 
     /**
@@ -62,7 +62,7 @@ public class Item {
      * @return the tamanho
      */
     public float getTamanho() {
-        return tamanho;
+        return this.tamanho;
     }
 
     /**
@@ -76,7 +76,7 @@ public class Item {
      * @return the preco
      */
     public float getPreco() {
-        return preco;
+        return this.preco;
     }
 
     /**
@@ -90,7 +90,7 @@ public class Item {
      * @return the custo
      */
     public float getCusto() {
-        return custo;
+        return this.custo;
     }
 
     /**

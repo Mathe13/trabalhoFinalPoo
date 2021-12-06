@@ -134,16 +134,26 @@ public class Estoque implements Estocavel {
     @Override
     public ArrayList<Item> searchData(String field_name, String field_value) {
         ArrayList<Item> retorno = new ArrayList<Item>();
+        System.out.println(field_name);
+        System.out.println(field_value);
+
         Item aux;
         for (int i = 0; i < this.itens.size(); i++) {
+            System.out.println(Integer.toString(i));
+
             aux = this.itens.get(i);
             switch (field_name) {
                 case "nome":
-                    if (aux.getNome() == field_value) {
+                    System.out.println(aux.getNome());
+
+                    if (aux.getNome().equals(field_value)) {
+                        System.out.println("bingo!!!");
+
                         retorno.add(aux);
                     }
             }
         }
+        System.out.println("saida: " + Integer.toString(retorno.size()));
         return retorno;
     }
     public void testaItens(){

@@ -5,6 +5,8 @@
  */
 package trabalhoFinalPoo;
 
+import telas.telaPrincipal;
+
 /**
  *
  * @author matheus
@@ -17,20 +19,18 @@ public class Main {
     public static void main(String[] args) {
         // TODO code application logic here
         Estoque estoque1 = new Estoque();
+        estoque1.importData();
         /*
         Item aux;
         aux = new Item(1,"peca1","metros",2.0f,1.0f,0.7f);
         estoque1.addItem(aux);
         aux = new Item(1,"roda","metros",2.0f,1.0f,0.7f);
         estoque1.addItem(aux);
-        
-        
         estoque1.exportData();
         */
-       
-        estoque1.importData();
+        new telaPrincipal(estoque1).setVisible(true);
         estoque1.testaItens();
-        
+
     }
     
 }

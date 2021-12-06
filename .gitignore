@@ -1,3 +1,4 @@
-.build
-.gradle
+.\.build
+.\.gradle
 build/distributions/trabalhoFinalPoo.tar
+.gradle/6.3/executionHistory/executionHistory.bin
